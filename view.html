@@ -7,7 +7,19 @@
 
 <body>
 
-<h2>Attendance Records</h2>
+<h2>Attendance Record</h2>
+
+<div id="list"></div>
+<script>
+let data = JSON.parse(localStorage.getItem("attendance")) || [];
+
+let list = document.getElementById("list");
+
+data.forEach((item, index) => {
+  list.innerHTML += "<p>" + (index+1) + ". " + item + "</p>";
+});
+</script>
+</body>
 
 <table>
 
