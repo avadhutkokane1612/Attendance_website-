@@ -21,6 +21,8 @@
 
 <section class="hero">
 <h2>Welcome to Attendance Management System</h2>
+  <input type="text" id="name" placeholder="Enter Student Name">
+<button onclick="saveAttendance()">Add Attendance</button>
 <p>This system helps teachers manage and track student attendance easily.</p>
 <a class="btn" href="admin_login.html">Admin Login</a>
 <a class="btn" href="home.html">Home</a>
@@ -32,3 +34,17 @@
 
 </body>
 </html>
+
+<script>
+function saveAttendance() {
+  let name = document.getElementById("name").value;
+
+  let data = JSON.parse(localStorage.getItem("attendance")) || [];
+
+  data.push(name);
+
+  localStorage.setItem("attendance", JSON.stringify(data));
+
+  alert("Saved!");
+}
+</script>
