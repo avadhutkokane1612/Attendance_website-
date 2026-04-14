@@ -23,6 +23,8 @@
 <h2>Welcome to Attendance Management System</h2>
   <input type="text" id="name" placeholder="Enter Student Name">
 <button onclick="saveAttendance()">Add Attendance</button>
+  <h3>Attendance List</h3>
+<div id="list"></div>
 <p>This system helps teachers manage and track student attendance easily.</p>
 <a class="btn" href="admin_login.html">Admin Login</a>
 <a class="btn" href="home.html">Home</a>
@@ -31,7 +33,33 @@
 <footer>
 <p>© 2026 Attendance Management System | Contact: admin_login@email.com</p>
 </footer>
+<script>
+function saveAttendance() {
+  let name = document.getElementById("name").value;
 
+  let data = JSON.parse(localStorage.getItem("attendance")) || [];
+
+  data.push(name);
+
+  localStorage.setItem("attendance", JSON.stringify(data));
+
+  displayData();
+}
+
+function displayData() {
+  let data = JSON.parse(localStorage.getItem("attendance")) || [];
+  let list = document.getElementById("list");
+
+  list.innerHTML = "";
+
+  data.forEach((item, index) => {
+    list.innerHTML += "<p>" + (index+1) + ". " + item + "</p>";
+  });
+}
+
+// Page load zala ki data show hoil
+window.onload = displayData;
+</script>
 </body>
 </html>
 
