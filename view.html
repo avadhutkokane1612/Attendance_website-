@@ -9,13 +9,16 @@
 
 <h2>Attendance Record</h2>
 
-<div id="list"></div>
+<table id="table">
+</table>
+
 <script>
 let data = localStorage.getItem("attendance");
 
 if (data) {
-  document.getElementById("list").innerHTML = data;
+  document.getElementById("table").innerHTML = data;
 }
+</script>
 
 let list = document.getElementById("list");
 
