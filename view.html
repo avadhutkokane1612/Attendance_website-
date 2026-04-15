@@ -1,15 +1,22 @@
-DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
 <head>
-<title>View Attendance</title>
-<link rel="stylesheet" href="style.css">
+  <title>View Attendance</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h2>Attendance Record</h2>
+<h2>Attendance Records</h2>
 
-<table id="table">
+<table border="1" id="table">
+  <tr>
+    <th>Roll Number</th>
+    <th>Student Name</th>
+    <th>Date</th>
+    <th>Status</th>
+  </tr>
 </table>
 
 <script>
@@ -19,39 +26,6 @@ if (data) {
   document.getElementById("table").innerHTML = data;
 }
 </script>
-
-let list = document.getElementById("list");
-
-data.forEach((item, index) => {
-  list.innerHTML += "<p>" + (index+1) + ". " + item + "</p>";
-});
-</script>
-</body>
-
-<table>
-
-<tr>
-<th>Roll Number</th>
-<th>Student Name</th>
-<th>Date</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td>1</td>
-<td>Rahul</td>
-<td>2026-04-09</td>
-<td>Present</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>Amit</td>
-<td>2026-04-09</td>
-<td>Absent</td>
-</tr>
-
-</table>
 
 </body>
 </html>
