@@ -16,7 +16,7 @@ function markAttendance() {
     // save data
     localStorage.setItem("attendance", table.innerHTML);
 }
-
+console.log("JS WORKING");
 window.onload = function () {
     let data = localStorage.getItem("attendance");
     if (data) {
