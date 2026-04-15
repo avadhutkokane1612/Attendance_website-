@@ -1,29 +1,35 @@
-<script>
-function saveAttendance() {
-  let name = document.getElementById("name").value;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-  let data = JSON.parse(localStorage.getItem("attendance")) || [];
+<body>
 
-  data.push(name);
+<h2>Attendance Management System</h2>
 
-  localStorage.setItem("attendance", JSON.stringify(data));
+<input type="text" id="name" placeholder="Enter Name">
 
-  displayData();
-}
+<select id="status">
+    <option value="Present">Present</option>
+    <option value="Absent">Absent</option>
+</select>
 
-function displayData() {
-  let data = JSON.parse(localStorage.getItem("attendance")) || [];
-  let list = document.getElementById("list");
-<input type="text" id="name">
-<button onclick="saveAttendance()">Add</button>
+<button onclick="markAttendance()">Add Attendance</button>
 
-<div id="list"></div>
-  list.innerHTML = "";
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
 
-  data.forEach((item, index) => {
-    list.innerHTML += "<p>" + (index+1) + ". " + item + "</p>";
-  });
-}
+    <tbody id="table"></tbody>
+</table>
 
-window.onload = displayData;
-</script>
+<script src="script.js"></script>
+
+</body>
+</html>
