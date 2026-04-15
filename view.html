@@ -1,31 +1,38 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>View Attendance</title>
-  <link rel="stylesheet" href="style.css">
+<title>View Attendance</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <h2>Attendance Records</h2>
 
-<table border="1" id="table">
-  <tr>
-    <th>Roll Number</th>
-    <th>Student Name</th>
-    <th>Date</th>
-    <th>Status</th>
-  </tr>
+<table>
+
+<tr>
+<th>Roll Number</th>
+<th>Student Name</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Rahul</td>
+<td>2026-04-09</td>
+<td>Present</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Amit</td>
+<td>2026-04-09</td>
+<td>Absent</td>
+</tr>
+
 </table>
-
-<script>
-let data = localStorage.getItem("attendance");
-
-if (data) {
-  document.getElementById("table").innerHTML = data;
-}
-</script>
 
 </body>
 </html>
