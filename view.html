@@ -11,7 +11,11 @@
 
 <div id="list"></div>
 <script>
-let data = JSON.parse(localStorage.getItem("attendance")) || [];
+let data = localStorage.getItem("attendance");
+
+if (data) {
+  document.getElementById("list").innerHTML = data;
+}
 
 let list = document.getElementById("list");
 
